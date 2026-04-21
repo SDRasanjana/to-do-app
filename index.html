@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced To-Do App</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="app-container">
+        <header class="app-header">
+            <h1 class="app-title">Advanced To-Do App</h1>
+            <button id="darkModeToggle" class="toggle-btn" type="button" aria-label="Toggle dark mode">
+                Dark Mode
+            </button>
+        </header>
+
+        <section class="input-area" aria-label="Add a new task">
+            <label for="taskInput" class="sr-only">Task</label>
+            <input id="taskInput" type="text" placeholder="Enter a new task..." autocomplete="off" />
+            <button id="addTaskBtn" type="button">Add</button>
+        </section>
+
+        <nav class="filter-bar" aria-label="Filter tasks">
+            <button class="filter-btn active" data-filter="all" type="button">All</button>
+            <button class="filter-btn" data-filter="pending" type="button">Pending</button>
+            <button class="filter-btn" data-filter="completed" type="button">Completed</button>
+        </nav>
+
+        <section class="todo-section" aria-label="To-do list">
+            <ul id="todoList" class="todo-list"></ul>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

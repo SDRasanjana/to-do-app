@@ -1,0 +1,202 @@
+:root {
+    --bg-color: #ffffff;
+    --surface-color: #f6f7fb;
+    --text-color: #111111;
+    --muted-text-color: #6b7280;
+    --border-color: #d9dde7;
+    --primary-color: #0f766e;
+    --primary-color-hover: #0b5d57;
+    --active-filter-bg: #dff7f4;
+    --active-filter-text: #0b4f4a;
+    --danger-color: #b42318;
+    --danger-hover: #8f1d13;
+}
+
+body.dark-mode {
+    --bg-color: #0f1419;
+    --surface-color: #1a212b;
+    --text-color: #e8edf3;
+    --muted-text-color: #a4b0bf;
+    --border-color: #334155;
+    --primary-color: #0fa394;
+    --primary-color-hover: #0b8f82;
+    --active-filter-bg: #113b38;
+    --active-filter-text: #90f0e6;
+    --danger-color: #f97066;
+    --danger-hover: #ef5448;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-container {
+    max-width: 680px;
+    margin: 40px auto;
+    padding: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.app-header {
+    position: relative;
+    margin-bottom: 20px;
+    min-height: 44px;
+}
+
+.app-title {
+    margin: 0;
+    font-size: 1.7rem;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+#taskInput:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-color: var(--primary-color);
+}
+
+#addTaskBtn {
+    padding: 10px 16px;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#addTaskBtn:hover {
+    background: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
+}
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.filter-btn {
+    flex: 1;
+    padding: 9px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    border-color: var(--primary-color);
+    background: var(--active-filter-bg);
+    color: var(--active-filter-text);
+    font-weight: 700;
+}
+
+.todo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--bg-color);
+}
+
+.todo-text {
+    font-size: 1rem;
+    color: var(--text-color);
+    word-break: break-word;
+}
+
+.todo-text.completed {
+    text-decoration: line-through;
+    color: var(--muted-text-color);
+}
+
+.todo-controls {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.todo-action-btn {
+    padding: 7px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.complete-btn {
+    border-color: var(--primary-color);
+}
+
+.delete-btn {
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+.delete-btn:hover {
+    border-color: var(--danger-hover);
+    color: var(--danger-hover);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
